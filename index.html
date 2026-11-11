@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070b18">
+<title>saeedxgod | Gaming Center</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --blue:#75ceff;
+    --purple:#a77bff;
+    --green:#42e5a0;
+    --white:#f5f8ff;
+    --muted:#b5c2d9;
+}
+
+* {margin:0;padding:0;box-sizing:border-box;}
+
+html {scroll-behavior:smooth;scroll-padding-top:110px;}
+
+body {
+    font-family:'Vazirmatn',sans-serif;
+    color:var(--white);
+    background:#070b18;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+a {text-decoration:none;color:inherit;}
+
+.container {width:min(1160px,92%);margin:auto;}
+
+body::before {
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-5;
+    background:
+        linear-gradient(180deg,rgba(4,9,23,.55),rgba(4,8,20,.88)),
+        url("minecraft-background.jpg") center center / cover no-repeat;
+    transform:scale(1.02);
+}
+
+body::after {
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-4;
+    pointer-events:none;
+    background:
+        radial-gradient(ellipse at 10% 18%,rgba(25,125,255,.28),transparent 38%),
+        radial-gradient(ellipse at 90% 25%,rgba(143,65,255,.25),transparent 38%),
+        radial-gradient(ellipse at 50% 95%,rgba(15,110,255,.2),transparent 42%);
+}
+
+.light-orb {
+    position:fixed;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    filter:blur(120px);
+    opacity:.3;
+    pointer-events:none;
+    z-index:-3;
+    animation:lightMove 13s ease-in-out infinite alternate;
+}
+
+.orb-blue {background:#087cff;top:8%;left:-220px;}
+.orb-purple {background:#923cff;top:38%;right:-230px;}
+.orb-cyan {background:#00bfff;bottom:-250px;left:35%;opacity:.18;}
+
+@keyframes lightMove {
+    from {transform:translate3d(0,-25px,0);}
+    to {transform:translate3d(30px,55px,0);}
+}
+
+/* HEADER */
+
+header {
+    position:sticky;
+    top:12px;
+    z-index:100;
+    width:min(1200px,94%);
+    margin:12px auto 0;
+    background:rgba(7,15,35,.65);
+    backdrop-filter:blur(30px);
+    border:1px solid rgba(190,220,255,.29);
+    border-radius:20px;
+    box-shadow:0 15px 50px rgba(0,0,0,.3);
+}
+
+.navbar {
+    min-height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding:0 25px;
+}
+
+.logo {
+    direction:ltr;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:27px;
+    font-weight:700;
+    letter-spacing:-1.5px;
+    white-space:nowrap;
+}
+
+.logo span,.footer-logo span {
+    color:var(--blue);
+    text-shadow:0 0 22px rgba(80,180,255,.9);
+}
+
+.nav-links {display:flex;align-items:center;gap:23px;flex-wrap:wrap;}
+
+.nav-links a {
+    color:#d1def2;
+    font-size:12px;
+    transition:.25s;
+    white-space:nowrap;
+}
+
+.nav-links a:hover {
+    color:var(--blue);
+    text-shadow:0 0 16px var(--blue);
+}
+
+.header-status {
+    display:flex;
+    align-items:center;
+    gap:9px;
+    color:#e5f1ff;
+    font-size:11px;
+    padding:9px 15px;
+    border-radius:30px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(190,220,255,.25);
+    white-space:nowrap;
+}
+
+.status-dot {
+    width:8px;height:8px;border-radius:50%;
+    background:#43e5a0;
+    box-shadow:0 0 15px #43e5a0;
+}
+
+/* HERO */
+
+.hero {
+    min-height:590px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:90px 15px 100px;
+}
+
+.hero-content {max-width:880px;animation:fadeUp 1s ease both;}
+
+.hero-label {
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:11px 19px;
+    border:1px solid rgba(130,190,255,.4);
+    background:rgba(15,35,75,.4);
+    backdrop-filter:blur(25px);
+    border-radius:40px;
+    color:#b4e4ff;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:10px;
+    letter-spacing:1.5px;
+    margin-bottom:28px;
+}
+
+.hero-label span {
+    width:7px;height:7px;
+    background:var(--blue);
+    border-radius:50%;
+    box-shadow:0 0 15px var(--blue);
+}
+
+.hero h1 {
+    font-size:clamp(42px,7vw,76px);
+    font-weight:900;
+    line-height:1.6;
+    text-shadow:0 4px 25px rgba(0,0,0,.6);
+}
+
+.hero h1 span {
+    background:linear-gradient(90deg,#a8e8ff,#76aaff,#c4a3ff);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.hero-description {
+    color:#d1ddef;
+    max-width:630px;
+    margin:18px auto 0;
+    font-size:14px;
+    line-height:2.6;
+}
+
+.hero-actions {
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:13px;
+    margin-top:34px;
+}
+
+.button {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:14px 27px;
+    border-radius:13px;
+    font-size:12px;
+    font-weight:800;
+    transition:.3s;
+}
+
+.button-primary {
+    color:#06101e;
+    background:linear-gradient(110deg,#a9e7ff,#6cb5ff);
+    box-shadow:0 0 25px rgba(70,165,255,.35);
+}
+
+.button-primary:hover,.button-outline:hover {transform:translateY(-4px);}
+
+.button-outline {
+    background:rgba(255,255,255,.07);
+    color:white;
+    border:1px solid rgba(190,215,255,.35);
+}
+
+/* SECTIONS */
+
+.section {padding-bottom:100px;scroll-margin-top:115px;}
+
+.section-header {
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:30px;
+}
+
+.section-kicker {
+    color:var(--blue);
+    font-family:'Space Grotesk',sans-serif;
+    font-size:10px;
+    letter-spacing:2px;
+    margin-bottom:8px;
+    text-shadow:0 0 15px var(--blue);
+}
+
+.section-header h2 {font-size:28px;font-weight:900;}
+
+.section-header p {color:var(--muted);font-size:12px;margin-top:8px;}
+
+.section-number {
+    color:rgba(150,190,255,.6);
+    font-family:'Space Grotesk',sans-serif;
+    font-size:42px;
+    font-weight:700;
+}
+
+/* DOWNLOAD TOOLBAR */
+
+.toolbar {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:13px;
+    flex-wrap:wrap;
+    padding:16px;
+    border:1px solid rgba(190,215,255,.3);
+    border-radius:20px;
+    background:rgba(8,17,38,.5);
+    backdrop-filter:blur(30px);
+    margin-bottom:25px;
+}
+
+.search-wrap {flex:1;min-width:220px;}
+
+.search-wrap input {
+    width:100%;
+    height:49px;
+    padding:0 18px;
+    border-radius:12px;
+    outline:none;
+    color:white;
+    background:rgba(255,255,255,.055);
+    border:1px solid rgba(190,215,255,.23);
+    font-size:12px;
+    font-family:inherit;
+}
+
+.search-wrap input:focus {border-color:var(--blue);}
+.search-wrap input::placeholder {color:#a5b3ce;}
+
+.filters {display:flex;gap:8px;flex-wrap:wrap;}
+
+.filter-btn {
+    padding:11px 17px;
+    border-radius:10px;
+    border:1px solid rgba(190,215,255,.22);
+    background:rgba(255,255,255,.055);
+    color:#c3cee2;
+    font-family:inherit;
+    font-size:11px;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.filter-btn:hover,.filter-btn.active {
+    background:linear-gradient(110deg,#8ed8ff,#a18bff);
+    color:#07111e;
+    border-color:transparent;
+    font-weight:800;
+}
+
+/* DOWNLOAD CARDS */
+
+.download-grid {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:22px;
+    perspective:1400px;
+}
+
+.download-card {
+    position:relative;
+    overflow:hidden;
+    border-radius:23px;
+    border:1px solid rgba(185,210,255,.3);
+    background:rgba(8,17,38,.65);
+    backdrop-filter:blur(30px);
+    box-shadow:0 20px 65px rgba(0,0,0,.3);
+    transition:.35s;
+    transform-style:preserve-3d;
+}
+
+.download-card:hover {
+    transform:translateY(-8px);
+    border-color:rgba(145,195,255,.8);
+    box-shadow:0 30px 65px rgba(0,0,0,.5),0 0 30px rgba(65,145,255,.2);
+}
+
+.card-image {
+    height:260px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+    isolation:isolate;
+    border-bottom:1px solid rgba(190,215,255,.2);
+}
+
+/* LUNAR BACKGROUND */
+
+.lunar-card .card-image {
+    background:
+        linear-gradient(180deg,rgba(4,12,30,.08),rgba(4,10,25,.75)),
+        linear-gradient(120deg,rgba(10,80,180,.25),rgba(4,10,30,.3)),
+        url("https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1800&q=95") center/cover;
+}
+
+.lunar-card .card-image::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle at 50% 50%,rgba(45,150,255,.38),transparent 40%),
+        linear-gradient(135deg,rgba(25,110,255,.2),transparent 60%);
+    z-index:0;
+    transition:.5s;
+}
+
+.lunar-card:hover .card-image::before {
+    background:
+        radial-gradient(circle at 50% 50%,rgba(45,150,255,.55),transparent 48%),
+        linear-gradient(135deg,rgba(25,110,255,.3),transparent 60%);
+}
+
+/* MODRINTH BACKGROUND */
+
+.modrinth-card .card-image {
+    background:
+        linear-gradient(180deg,rgba(0,20,15,.05),rgba(0,15,10,.78)),
+        linear-gradient(120deg,rgba(0,160,90,.25),rgba(0,20,15,.3)),
+        url("https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1800&q=95") center/cover;
+}
+
+.modrinth-card .card-image::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle at 50% 50%,rgba(20,220,130,.32),transparent 42%),
+        linear-gradient(135deg,rgba(0,180,100,.2),transparent 60%);
+    z-index:0;
+    transition:.5s;
+}
+
+.modrinth-card:hover .card-image::before {
+    background:
+        radial-gradient(circle at 50% 50%,rgba(20,220,130,.52),transparent 48%),
+        linear-gradient(135deg,rgba(0,180,100,.3),transparent 60%);
+}
+
+/* IMAGE LIGHT AND DEPTH */
+
+.card-image::after {
+    content:"";
+    position:absolute;
+    inset:-100% -50%;
+    z-index:1;
+    background:linear-gradient(
+        115deg,
+        transparent 40%,
+        rgba(255,255,255,.13) 50%,
+        transparent 60%
+    );
+    transform:translateX(-60%) rotate(15deg);
+    transition:transform .8s ease;
+    pointer-events:none;
+}
+
+.download-card:hover .card-image::after {
+    transform:translateX(60%) rotate(15deg);
+}
+
+.logo-glow {
+    position:absolute;
+    width:210px;
+    height:210px;
+    border-radius:50%;
+    filter:blur(65px);
+    z-index:2;
+    opacity:.65;
+    transition:.4s;
+}
+
+.lunar-card .logo-glow {
+    background:#278cff;
+    box-shadow:0 0 80px #278cff;
+}
+
+.modrinth-card .logo-glow {
+    background:#12d879;
+    box-shadow:0 0 80px #12d879;
+}
+
+.download-card:hover .logo-glow {
+    transform:scale(1.25);
+    opacity:.85;
+}
+
+.card-image img {
+    position:relative;
+    z-index:3;
+    width:175px;
+    height:175px;
+    object-fit:contain;
+    filter:
+        drop-shadow(0 0 20px rgba(100,180,255,.75))
+        drop-shadow(0 12px 18px rgba(0,0,0,.5));
+    transition:.5s cubic-bezier(.2,.8,.2,1);
+}
+
+.download-card:hover .card-image img {
+    transform:scale(1.13) translateY(-5px);
+    filter:
+        drop-shadow(0 0 30px rgba(100,180,255,.95))
+        drop-shadow(0 18px 25px rgba(0,0,0,.6));
+}
+
+.modrinth-card .card-image img {
+    width:165px;
+    height:165px;
+    filter:
+        drop-shadow(0 0 22px rgba(20,230,130,.7))
+        drop-shadow(0 12px 18px rgba(0,0,0,.5));
+}
+
+.modrinth-card:hover .card-image img {
+    filter:
+        drop-shadow(0 0 32px rgba(20,230,130,.95))
+        drop-shadow(0 18px 25px rgba(0,0,0,.6));
+}
+
+.image-label {
+    position:absolute;
+    top:17px;
+    right:17px;
+    z-index:5;
+    padding:8px 14px;
+    border-radius:30px;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:10px;
+    letter-spacing:1px;
+    color:#e5f3ff;
+    background:rgba(5,12,25,.65);
+    border:1px solid rgba(190,215,255,.4);
+    backdrop-filter:blur(15px);
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
+}
+
+.card-content {padding:25px;}
+
+.card-top {display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.card-title {font-size:21px;font-weight:900;}
+
+.card-subtitle {
+    font-family:'Space Grotesk',sans-serif;
+    font-size:10px;
+    color:#a6b8d8;
+    direction:ltr;
+    text-align:right;
+    margin-top:3px;
+}
+
+.card-badge {
+    margin-right:auto;
+    color:#69e9ae;
+    font-size:10px;
+    background:rgba(60,220,150,.1);
+    border:1px solid rgba(60,220,150,.28);
+    padding:7px 12px;
+    border-radius:30px;
+}
+
+.card-description {color:#c2cde0;font-size:12px;line-height:2.5;margin:15px 0 20px;}
+.tags {display:flex;gap:7px;flex-wrap:wrap;margin-bottom:21px;}
+
+.tag {
+    font-family:'Space Grotesk',sans-serif;
+    font-size:9px;
+    color:#b4e3ff;
+    padding:7px 11px;
+    border:1px solid rgba(150,200,255,.23);
+    border-radius:8px;
+    background:rgba(110,170,255,.09);
+}
+
+.card-footer {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    padding-top:18px;
+    border-top:1px solid rgba(190,215,255,.2);
+}
+
+.card-footer span {color:#aebbd1;font-size:10px;}
+
+.download-button {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:12px 18px;
+    border-radius:10px;
+    color:#071321;
+    background:linear-gradient(110deg,#a1e1ff,#73baff);
+    font-size:11px;
+    font-weight:900;
+    transition:.25s;
+}
+
+.modrinth-card .download-button {background:linear-gradient(110deg,#6df0b1,#27c987);}
+.download-button:hover {transform:translateY(-3px);filter:brightness(1.1);}
+
+.empty-message {
+    display:none;
+    grid-column:1/-1;
+    text-align:center;
+    padding:40px;
+    border:1px dashed rgba(190,220,255,.25);
+    border-radius:16px;
+    color:var(--muted);
+}
+
+.notice {
+    display:flex;
+    align-items:flex-start;
+    gap:15px;
+    padding:23px;
+    margin-top:27px;
+    border:1px solid rgba(140,190,255,.25);
+    border-radius:18px;
+    background:rgba(15,35,70,.35);
+}
+
+.notice-icon {font-size:23px;color:var(--blue);}
+.notice h3 {font-size:13px;margin-bottom:7px;}
+.notice p {color:#bdc9dc;font-size:11px;line-height:2.4;}
+
+/* SETTINGS GALLERY */
+
+.settings-gallery {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:25px;
+    margin-top:30px;
+}
+
+.settings-image-card {
+    position:relative;
+    overflow:hidden;
+    padding:12px;
+    border-radius:20px;
+    background:rgba(8,17,38,.65);
+    border:1px solid rgba(140,190,255,.3);
+    backdrop-filter:blur(25px);
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+    transition:.35s ease;
+}
+
+.settings-image-card:hover {
+    transform:translateY(-7px);
+    border-color:#75ceff;
+    box-shadow:0 15px 45px rgba(60,150,255,.25);
+}
+
+.settings-image-card a {display:block;cursor:zoom-in;}
+
+.settings-image-card img {
+    display:block;
+    width:100%;
+    height:auto;
+    border-radius:12px;
+    transition:.4s ease;
+}
+
+.settings-image-card:hover img {transform:scale(1.025);}
+.settings-image-card h3 {color:#a8dfff;text-align:center;font-size:16px;margin:15px 0 5px;}
+.settings-image-card p {color:#b5c2d9;text-align:center;font-size:11px;}
+
+/* ABOUT */
+
+.about-card {
+    padding:30px;
+    border:1px solid rgba(190,215,255,.25);
+    border-radius:21px;
+    background:rgba(8,17,38,.6);
+    backdrop-filter:blur(30px);
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+
+.about-card p {color:#c0cce0;font-size:13px;line-height:2.8;}
+
+/* SYSTEM SPECS */
+
+.system-specs {
+    position:relative;
+    padding:35px 0 100px;
+    overflow:hidden;
+    scroll-margin-top:115px;
+}
+
+.system-specs::before {
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    background:#6d28d9;
+    filter:blur(180px);
+    opacity:.13;
+    top:10%;
+    left:30%;
+    pointer-events:none;
+}
+
+.specs-grid {
+    display:grid;
+    grid-template-columns:repeat(5,minmax(0,1fr));
+    gap:17px;
+    position:relative;
+    perspective:1200px;
+}
+
+.spec-card {
+    position:relative;
+    padding:25px 15px;
+    text-align:center;
+    background:linear-gradient(145deg,rgba(30,30,55,.85),rgba(12,12,25,.95));
+    border:1px solid rgba(139,92,246,.2);
+    border-radius:20px;
+    backdrop-filter:blur(15px);
+    transition:.35s ease;
+    overflow:hidden;
+    transform-style:preserve-3d;
+}
+
+.spec-card::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(135deg,rgba(139,92,246,.16),transparent 55%);
+    opacity:0;
+    transition:.35s;
+    pointer-events:none;
+}
+
+.spec-card:hover {
+    transform:translateY(-10px) rotateX(3deg) scale(1.025);
+    border-color:#8b5cf6;
+    box-shadow:0 15px 40px rgba(109,40,217,.25),0 0 25px rgba(117,206,255,.12);
+}
+
+.spec-card:hover::before {opacity:1;}
+
+.spec-image {
+    width:100%;
+    height:125px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:18px;
+    position:relative;
+    z-index:1;
+}
+
+.spec-image img {
+    width:100%;
+    height:115px;
+    object-fit:contain;
+    filter:drop-shadow(0 8px 15px rgba(100,150,255,.25));
+    transition:.4s ease;
+}
+
+.spec-card:hover .spec-image img {
+    transform:scale(1.13) translateY(-5px);
+    filter:drop-shadow(0 12px 22px rgba(117,206,255,.55));
+}
+
+.spec-label {
+    display:block;
+    color:#a78bfa;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:2px;
+    margin-bottom:12px;
+    font-family:'Space Grotesk',sans-serif;
+    position:relative;
+}
+
+.spec-card h3 {
+    color:#fff;
+    font-size:15px;
+    margin:0 0 9px;
+    direction:ltr;
+    position:relative;
+}
+
+.spec-card p {
+    color:#9292a8;
+    font-size:12px;
+    margin:0;
+    position:relative;
+}
+
+.specs-note {
+    margin-top:20px;
+    padding:15px 20px;
+    text-align:center;
+    border:1px solid rgba(117,206,255,.2);
+    border-radius:14px;
+    background:rgba(15,35,70,.25);
+    color:#aebbd1;
+    font-size:11px;
+}
+
+/* MY PVP PACKS */
+
+.my-packs {
+    padding:35px 0 110px;
+    scroll-margin-top:115px;
+    position:relative;
+}
+
+.my-packs::before {
+    content:"";
+    position:absolute;
+    width:500px;
+    height:400px;
+    left:20%;
+    top:10%;
+    background:#2563eb;
+    filter:blur(180px);
+    opacity:.12;
+    pointer-events:none;
+}
+
+.packs-grid {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:25px;
+    perspective:1400px;
+    position:relative;
+}
+
+.pack-card {
+    position:relative;
+    overflow:hidden;
+    border-radius:24px;
+    background:linear-gradient(145deg,rgba(19,31,62,.92),rgba(7,13,30,.96));
+    border:1px solid rgba(117,206,255,.28);
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+    transition:.4s ease;
+    transform-style:preserve-3d;
+}
+
+.pack-card:hover {
+    transform:translateY(-10px) rotateX(2deg);
+    border-color:rgba(117,206,255,.8);
+    box-shadow:0 25px 70px rgba(0,0,0,.5),0 0 35px rgba(65,145,255,.2);
+}
+
+.pack-cover {
+    height:290px;
+    position:relative;
+    overflow:hidden;
+    background:#101b35;
+    border-bottom:1px solid rgba(160,200,255,.2);
+}
+
+.pack-cover::after {
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg,transparent 45%,rgba(5,10,25,.65));
+    pointer-events:none;
+}
+
+.pack-cover img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform .6s ease;
+}
+
+.pack-card:hover .pack-cover img {transform:scale(1.06);}
+
+.pack-resolution {
+    position:absolute;
+    top:17px;
+    right:17px;
+    z-index:2;
+    padding:9px 15px;
+    border-radius:30px;
+    background:rgba(5,12,25,.75);
+    border:1px solid rgba(180,215,255,.35);
+    color:#c4eaff;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:11px;
+    font-weight:700;
+    backdrop-filter:blur(12px);
+}
+
+.pack-content {padding:25px;}
+
+.pack-heading {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.pack-heading h3 {
+    font-size:23px;
+    font-weight:900;
+}
+
+.pack-type {
+    font-family:'Space Grotesk',sans-serif;
+    color:#75ceff;
+    font-size:10px;
+    letter-spacing:1px;
+}
+
+.pack-description {
+    color:#bfcee3;
+    font-size:12px;
+    line-height:2.5;
+    margin:16px 0 20px;
+}
+
+.pack-tags {
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-bottom:23px;
+}
+
+.pack-tag {
+    color:#c5e7ff;
+    background:rgba(90,160,255,.09);
+    border:1px solid rgba(120,190,255,.22);
+    border-radius:9px;
+    padding:7px 12px;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:10px;
+}
+
+.pack-footer {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding-top:18px;
+    border-top:1px solid rgba(190,215,255,.17);
+}
+
+.pack-footer span {
+    color:#9eafc9;
+    font-size:10px;
+}
+
+.pack-button {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:12px 18px;
+    border-radius:11px;
+    color:#061321;
+    background:linear-gradient(110deg,#a8e5ff,#76baff);
+    font-size:11px;
+    font-weight:900;
+    transition:.25s;
+}
+
+.pack-button:hover {
+    transform:translateY(-3px);
+    filter:brightness(1.12);
+}
+
+.pack-card-purple .pack-button {
+    background:linear-gradient(110deg,#d2b6ff,#9c79ff);
+}
+
+.packs-note {
+    position:relative;
+    margin-top:25px;
+    padding:18px 22px;
+    border:1px solid rgba(160,130,255,.25);
+    border-radius:16px;
+    background:rgba(50,35,90,.2);
+    color:#c4c3e2;
+    font-size:11px;
+    line-height:2.3;
+    text-align:center;
+}
+
+/* FOOTER */
+
+footer {
+    border-top:1px solid rgba(190,215,255,.2);
+    background:rgba(5,9,20,.65);
+    backdrop-filter:blur(30px);
+    padding:32px 0;
+}
+
+.footer-content {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.footer-logo {
+    direction:ltr;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:22px;
+    font-weight:700;
+}
+
+.footer-copy {
+    color:#a7b6d0;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:10px;
+}
+
+@keyframes fadeUp {
+    from {opacity:0;transform:translateY(25px);}
+    to {opacity:1;transform:translateY(0);}
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px) {
+    .specs-grid {grid-template-columns:repeat(3,minmax(0,1fr));}
+}
+
+@media(max-width:900px) {
+    .navbar {flex-wrap:wrap;justify-content:center;padding:15px;}
+    .nav-links {justify-content:center;gap:15px;}
+    .header-status {display:none;}
+}
+
+@media(max-width:700px) {
+    .download-grid,.settings-gallery,.packs-grid {grid-template-columns:1fr;}
+    .hero {min-height:490px;}
+    .section-header h2 {font-size:25px;}
+    .nav-links a {font-size:10px;}
+    .specs-grid {grid-template-columns:repeat(2,minmax(0,1fr));}
+    .pack-cover {height:240px;}
+}
+
+@media(max-width:520px) {
+    header {width:96%;}
+    .logo {font-size:21px;}
+    .nav-links {gap:10px;}
+    .nav-links a {font-size:9px;}
+    .hero {min-height:440px;padding:65px 10px;}
+    .hero h1 {font-size:39px;}
+    .hero-description {font-size:12px;}
+    .toolbar {align-items:stretch;}
+    .filters {width:100%;}
+    .filter-btn {flex:1;padding:10px 8px;}
+    .card-image {height:210px;}
+    .card-content {padding:20px;}
+    .footer-content {justify-content:center;text-align:center;}
+    .specs-grid {gap:12px;}
+    .spec-card {padding:20px 10px;}
+    .spec-card h3 {font-size:13px;}
+    .spec-image {height:105px;}
+    .spec-image img {height:100px;}
+    .pack-content {padding:20px;}
+    .pack-heading h3 {font-size:20px;}
+    .pack-footer {align-items:flex-start;flex-direction:column;}
+    .pack-button {width:100%;}
+}
+
+@media(prefers-reduced-motion:reduce) {
+    *,*::before,*::after {
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+        transition-duration:.01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="light-orb orb-blue"></div>
+<div class="light-orb orb-purple"></div>
+<div class="light-orb orb-cyan"></div>
+
+<header>
+    <div class="container navbar">
+        <a class="logo" href="#home">saeed<span>x</span>god</a>
+
+        <nav class="nav-links">
+            <a href="#home">خانه</a>
+            <a href="#downloads">دانلودها</a>
+            <a href="#minecraft-settings">تنظیمات ماینکرافت</a>
+            <a href="#obs-settings">تنظیمات OBS</a>
+            <a href="#about">درباره سایت</a>
+            <a href="#system-specs">سیستم من</a>
+            <a href="#my-packs">پک‌های من</a>
+        </nav>
+
+        <div class="header-status">
+            <span class="status-dot"></span>
+            آنلاین
+        </div>
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-label">
+                <span></span>
+                SAEEDXGOD GAMING CENTER
+            </div>
+
+            <h1>
+                دنیای گیمینگ<br>
+                <span>با یک کلیک شروع می‌شود.</span>
+            </h1>
+
+            <p class="hero-description">
+                به مرکز گیمینگ saeedxgod خوش آمدید.
+                کلاینت‌ها و تنظیمات مورد نیاز ماینکرفت و استریم
+                را در یک محیط مدرن و اختصاصی پیدا کنید.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#downloads" class="button button-primary">مشاهده دانلودها ↓</a>
+                <a href="#minecraft-settings" class="button button-outline">تنظیمات ماینکرفت</a>
+                <a href="#obs-settings" class="button button-outline">تنظیمات OBS</a>
+                <a href="#system-specs" class="button button-outline">مشخصات سیستم</a>
+                <a href="#my-packs" class="button button-outline">پک های من</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="downloads">
+        <div class="section-header">
+            <div>
+                <div class="section-kicker">OUR DOWNLOADS</div>
+                <h2>مرکز دانلود</h2>
+                <p>ابزار مورد نیاز خود را انتخاب کنید.</p>
+            </div>
+            <div class="section-number">01</div>
+        </div>
+
+        <div class="toolbar">
+            <div class="search-wrap">
+                <input type="search" id="searchInput"
+                       placeholder="جستجوی Lunar، Modrinth و ..."
+                       autocomplete="off">
+            </div>
+
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">همه</button>
+                <button class="filter-btn" data-filter="client">پروفایل</button>
+                <button class="filter-btn" data-filter="mods">مود و شیدر و ریسورس پک</button>
+            </div>
+        </div>
+
+        <div class="download-grid" id="downloadGrid">
+
+            <article class="download-card lunar-card"
+                     data-category="client"
+                     data-search="lunar client پروفایل برای روان کردن بازی">
+
+                <div class="card-image">
+                    <span class="image-label">LUNAR PROFILE</span>
+                    <div class="logo-glow"></div>
+                    <img src="https://brand.lunarclient.com/assets/site/img/logo.svg" alt="Lunar Client">
+                </div>
+
+                <div class="card-content">
+                    <div class="card-top">
+                        <div>
+                            <h3 class="card-title">Lunar Profile</h3>
+                            <div class="card-subtitle">MINECRAFT PROFILE</div>
+                        </div>
+                        <div class="card-badge">PROFILE</div>
+                    </div>
+
+                    <p class="card-description">
+                        پروفایل لونار کلاینت من که میتوانید ازش استفاده کنید و با بهترین کیفیت و روان بودن بازی کنید.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">Minecraft</span>
+                        <span class="tag">PvP</span>
+                        <span class="tag">Performance</span>
+                    </div>
+
+                    <div class="card-footer">
+                        <span>وب‌سایت غیر رسمی</span>
+                        <a class="download-button"
+                           href="https://download1326.mediafire.com/u2fegfgku12gAb55Vr6ARR_CN6d4sJqV6j2_G67ouupH0MRT_qMozbmbPhxt1bh5q6KRXMBKLNQYwsDeBwLJjq2oRxZnOZ0tZmWzmAFNFnypopxBT7oMJ_djAXpzgDir7VW8duiMbUAIluPN9mNIfXh1NQkRcJhD2IWiJuh_gIQ/tw90plssz3gd0tk/saeedprof.rar"
+                           target="_blank" rel="noopener noreferrer">
+                            دانلود پروفایل ↗
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="download-card modrinth-card"
+                     data-category="mods"
+                     data-search="modrinth مود شیدر ریسورس پک ماینکرفت">
+
+                <div class="card-image">
+                    <span class="image-label">MODRINTH</span>
+                    <div class="logo-glow"></div>
+                    <img src="https://cdn.jsdelivr.net/gh/selfhst/icons/svg/modrinth-light.svg" alt="Modrinth">
+                </div>
+
+                <div class="card-content">
+                    <div class="card-top">
+                        <div>
+                            <h3 class="card-title">Modrinth</h3>
+                            <div class="card-subtitle">MODS & SHADERS & RESOURCEPACKS</div>
+                        </div>
+                        <div class="card-badge">MODS</div>
+                    </div>
+
+                    <p class="card-description">
+                        برای دانلود کردن مودها، شیدرها و ریسورس‌پک‌های من روی لینک زیر بزنید.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">Mods</span>
+                        <span class="tag">Resourcepack</span>
+                        <span class="tag">Shader</span>
+                        <span class="tag">Minecraft</span>
+                    </div>
+
+                    <div class="card-footer">
+                        <span>وب‌سایت غیر رسمی</span>
+                        <a class="download-button"
+                           href="https://download1582.mediafire.com/b9ag0k17rkbgfIpjcIhTkZIklXZ2-_HXhx8EzBe4Mof_K8OF8WdKzmcT2klMLeJ5i9Pz8PwxmxJbpBXrJTg-xKjQUr82lZl8EUSE0rcZ5iAIgvQ20eHAa-BRptThS1uDY_IG52r2sDgnh1CvwgPRpRrxaoHP-rNqgAEFv4aMtCQ/y5wikcjsghnyyp0/mod%26resou%26shader.zip"
+                           target="_blank" rel="noopener noreferrer">
+                            دانلود مودها ↗
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <div class="empty-message" id="emptyMessage">
+                نتیجه‌ای برای جستجوی شما پیدا نشد.
+            </div>
+        </div>
+
+        <div class="notice">
+            <div class="notice-icon">ⓘ</div>
+            <div>
+                <h3>اطلاعیه دانلود</h3>
+                <p>
+                    لینک‌های این نسخه به صفحات غیر رسمی نرم‌افزارها هدایت می‌شوند.
+                    برای دریافت آخرین نسخه از وب‌سایت غیر رسمی استفاده کنید.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="minecraft-settings">
+        <div class="section-header">
+            <div>
+                <div class="section-kicker">MINECRAFT SETTINGS</div>
+                <h2>تنظیمات ماینکرفت</h2>
+                <p>تصاویر تنظیمات پیشنهادی ماینکرفت</p>
+            </div>
+            <div class="section-number">02</div>
+        </div>
+
+        <div class="settings-gallery">
+            <div class="settings-image-card">
+                <a href="settings-video.png" target="_blank">
+                    <img src="settings-video.png" alt="Video Settings" loading="lazy">
+                </a>
+                <h3>Video Settings</h3>
+                <p>تنظیمات اصلی گرافیک</p>
+            </div>
+
+            <div class="settings-image-card">
+                <a href="settings-detail.png" target="_blank">
+                    <img src="settings-detail.png" alt="Detail Settings" loading="lazy">
+                </a>
+                <h3>Detail Settings</h3>
+                <p>تنظیمات جزئیات تصویر</p>
+            </div>
+
+            <div class="settings-image-card">
+                <a href="settings-animation.png" target="_blank">
+                    <img src="settings-animation.png" alt="Animation Settings" loading="lazy">
+                </a>
+                <h3>Animation Settings</h3>
+                <p>تنظیمات انیمیشن‌ها</p>
+            </div>
+
+            <div class="settings-image-card">
+                <a href="settings-other.png" target="_blank">
+                    <img src="settings-other.png" alt="Other Settings" loading="lazy">
+                </a>
+                <h3>Other Settings</h3>
+                <p>تنظیمات متفرقه</p>
+            </div>
+
+            <div class="settings-image-card">
+                <a href="settings-performance.png" target="_blank">
+                    <img src="settings-performance.png" alt="Performance Settings" loading="lazy">
+                </a>
+                <h3>Performance Settings</h3>
+                <p>تنظیمات افزایش عملکرد و FPS</p>
+            </div>
+
+            <div class="settings-image-card">
+                <a href="settings-quality.png" target="_blank">
+                    <img src="settings-quality.png" alt="Quality Settings" loading="lazy">
+                </a>
+                <h3>Quality Settings</h3>
+                <p>تنظیمات کیفیت تصویر</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="obs-settings">
+        <div class="section-header">
+            <div>
+                <div class="section-kicker">OBS STUDIO SETTINGS</div>
+                <h2>تنظیمات OBS</h2>
+                <p>تصاویر تنظیمات پیشنهادی برای استریم و ضبط با OBS Studio</p>
+            </div>
+            <div class="section-number">03</div>
+        </div>
+
+        <div class="settings-gallery">
+            <div class="settings-image-card">
+                <a href="obs-output.png" target="_blank" rel="noopener">
+                    <img src="obs-output.png" alt="OBS Output Settings" loading="lazy">
+                </a>
+                <h3>Output Settings</h3>
+                <p>تنظیمات خروجی، انکودر و بیت‌ریت استریم</p>
+            </div>
+
+            <div class="settings-image-card">
+                <a href="obs-video.png" target="_blank" rel="noopener">
+                    <img src="obs-video.png" alt="OBS Video Settings" loading="lazy">
+                </a>
+                <h3>Video Settings</h3>
+                <p>رزولوشن تصویر، فیلتر و نرخ فریم</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="system-specs" id="system-specs">
+        <div class="section-header">
+            <div>
+                <div class="section-kicker">MY HARDWARE</div>
+                <h2>مشخصات سیستم من</h2>
+                <p>سیستمی که باهاش گیم می‌زنم و استریم می‌کنم</p>
+            </div>
+            <div class="section-number">04</div>
+        </div>
+
+        <div class="specs-grid">
+            <div class="spec-card">
+                <div class="spec-image">
+                    <img src="cpu.png" alt="Intel Core i5-4670 Processor" loading="lazy">
+                </div>
+                <span class="spec-label">PROCESSOR</span>
+                <h3>Intel Core i5-4670</h3>
+                <p>CPU</p>
+            </div>
+
+            <div class="spec-card">
+                <div class="spec-image">
+                    <img src="ram.png" alt="DDR3 RAM Memory" loading="lazy">
+                </div>
+                <span class="spec-label">MEMORY</span>
+                <h3>16GB DDR3</h3>
+                <p>1600MHz RAM</p>
+            </div>
+
+            <div class="spec-card">
+                <div class="spec-image">
+                    <img src="gpu.png" alt="AMD Radeon RX 580 8GB" loading="lazy">
+                </div>
+                <span class="spec-label">GRAPHICS</span>
+                <h3>AMD RX 580</h3>
+                <p>8GB VRAM</p>
+            </div>
+
+            <div class="spec-card">
+                <div class="spec-image">
+                    <img src="ssd.png" alt="Lexar 512GB SSD" loading="lazy">
+                </div>
+                <span class="spec-label">STORAGE</span>
+                <h3>LEXAR SSD</h3>
+                <p>512GB</p>
+            </div>
+
+            <div class="spec-card">
+                <div class="spec-image">
+                    <img src="internet.png" alt="Fiber Optic Internet" loading="lazy">
+                </div>
+                <span class="spec-label">INTERNET</span>
+                <h3>HIWEB FIBER</h3>
+                <p>Fiber Optic Internet</p>
+            </div>
+
+            <div class="spec-card">
+                <div class="spec-image">
+                    <img src="a90.png" alt="Bloody A90 Mouse" loading="lazy">
+                </div>
+                <span class="spec-label">MOUSE</span>
+                <h3>Bloody A90</h3>
+                <p>MOUSE</p>
+            </div>
+
+            <div class="spec-card">
+                <div class="spec-image">
+                    <img src="aula2022.png" alt="Aula2022 Keyboard" loading="lazy">
+                </div>
+                <span class="spec-label">KEYBOARD</span>
+                <h3>Aula2022</h3>
+                <p>Keyboard</p>
+            </div>
+        </div>
+
+        <div class="specs-note">
+            SAEEDXGOD GAMING SETUP — HARDWARE & STREAMING
+        </div>
+    </section>
+
+    <section class="my-packs" id="my-packs">
+        <div class="section-header">
+            <div>
+                <div class="section-kicker">MY PERSONAL PVP PACKS</div>
+                <h2>پک‌های PvP من</h2>
+                <p>تکسچرپک‌های اختصاصی من برای Minecraft PvP و Bedwars</p>
+            </div>
+            <div class="section-number">05</div>
+        </div>
+
+        <div class="packs-grid">
+            <article class="pack-card">
+                <div class="pack-cover">
+                    <span class="pack-resolution">64X TEXTURE PACK</span>
+                    <img
+                        src="https://pvprp.com/assets/packs/saeedxgod/16740/banner.png?v=1745075200"
+                        alt="radikal 64x Minecraft PvP Texture Pack"
+                        loading="lazy">
+                </div>
+
+                <div class="pack-content">
+                    <div class="pack-heading">
+                        <h3>radikal 64x</h3>
+                        <span class="pack-type">PVP RESOURCE PACK</span>
+                    </div>
+
+                    <p class="pack-description">
+                        پک شخصی radikal 64x برای تجربه متفاوت Minecraft PvP،
+                        با رزولوشن 64x و طراحی مناسب مبارزات و گیم‌پلی.
+                    </p>
+
+                    <div class="pack-tags">
+                        <span class="pack-tag">64x</span>
+                        <span class="pack-tag">Minecraft</span>
+                        <span class="pack-tag">PvP</span>
+                        <span class="pack-tag">Bedwars</span>
+                    </div>
+
+                    <div class="pack-footer">
+                        <span>منتشرشده در PVPRP</span>
+                        <a class="pack-button"
+                           href="https://pvprp.com/pack?p=16740&or=profile"
+                           target="_blank" rel="noopener noreferrer">
+                            مشاهده و دانلود پک ↗
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="pack-card pack-card-purple">
+                <div class="pack-cover">
+                    <span class="pack-resolution">16X 3D TEXTURE PACK</span>
+                    <img
+                        src="https://pvprp.com/assets/packs/saeedxgod/16724/banner.png?v=1744885489"
+                        alt="ghadr motlagh 16x 3D Minecraft PvP Texture Pack"
+                        loading="lazy">
+                </div>
+
+                <div class="pack-content">
+                    <div class="pack-heading">
+                        <h3>ghadr motlagh 16x</h3>
+                        <span class="pack-type">3D PVP PACK</span>
+                    </div>
+
+                    <p class="pack-description">
+                        پک شخصی ghadr motlagh 16x با طراحی سه‌بعدی،
+                        مناسب Minecraft PvP و مسابقات Bedwars.
+                    </p>
+
+                    <div class="pack-tags">
+                        <span class="pack-tag">16x</span>
+                        <span class="pack-tag">3D</span>
+                        <span class="pack-tag">PvP</span>
+                        <span class="pack-tag">Bedwars</span>
+                    </div>
+
+                    <div class="pack-footer">
+                        <span>منتشرشده در PVPRP</span>
+                        <a class="pack-button"
+                           href="https://pvprp.com/pack?p=16724&or=profile"
+                           target="_blank" rel="noopener noreferrer">
+                            مشاهده و دانلود پک ↗
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="packs-note">
+            این بخش شامل تکسچرپک‌های منتشرشده توسط saeedxgod است.
+            برای مشاهده جزئیات و دریافت فایل هر پک، روی دکمه مشاهده و دانلود کلیک کنید.
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <div class="section-header">
+            <div>
+                <div class="section-kicker">ABOUT US</div>
+                <h2>درباره saeedxgod</h2>
+                <p>یک مرکز مدرن و اختصاصی برای گیمرها</p>
+            </div>
+            <div class="section-number">06</div>
+        </div>
+
+        <div class="about-card">
+            <p>
+                هدف saeedxgod فراهم کردن دسترسی ساده به ابزارهای مورد نیاز گیمرهاست.
+                این وب‌سایت با تمرکز بر ماینکرفت، کلاینت‌ها و تجربه بهتر بازی طراحی شده است.
+                طراحی شیشه‌ای و محیط مدرن سایت برای ایجاد تجربه‌ای ساده و جذاب ساخته شده است.
+            </p>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container footer-content">
+        <div class="footer-logo">saeed<span>x</span>god</div>
+        <div class="footer-copy">
+            © 2026 saeedxgod — All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<script>
+(() => {
+    "use strict";
+
+    const searchInput = document.getElementById("searchInput");
+    const cards = Array.from(
+        document.querySelectorAll(".download-card[data-category]")
+    );
+    const filters = Array.from(
+        document.querySelectorAll(".filter-btn")
+    );
+    const emptyMessage = document.getElementById("emptyMessage");
+
+    let activeFilter = "all";
+
+    function updateCards() {
+        if (!searchInput || !emptyMessage) return;
+
+        const query = searchInput.value.trim().toLocaleLowerCase("fa");
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+            const categories = (card.dataset.category || "").split(/\s+/);
+            const searchable = (
+                (card.dataset.search || "") + " " + card.textContent
+            ).toLocaleLowerCase("fa");
+
+            const categoryMatch =
+                activeFilter === "all" || categories.includes(activeFilter);
+
+            const searchMatch =
+                !query || searchable.includes(query);
+
+            const visible = categoryMatch && searchMatch;
+            card.hidden = !visible;
+
+            if (visible) visibleCount++;
+        });
+
+        emptyMessage.style.display =
+            visibleCount === 0 ? "block" : "none";
+    }
+
+    if (searchInput && emptyMessage) {
+        searchInput.addEventListener("input", updateCards);
+
+        filters.forEach(button => {
+            button.addEventListener("click", () => {
+                filters.forEach(item =>
+                    item.classList.remove("active")
+                );
+
+                button.classList.add("active");
+                activeFilter = button.dataset.filter || "all";
+
+                updateCards();
+            });
+        });
+
+        updateCards();
+    }
+
+    const canHover =
+        window.matchMedia &&
+        window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+    if (canHover) {
+        cards.forEach(card => {
+            card.addEventListener("pointermove", event => {
+                const rect = card.getBoundingClientRect();
+
+                const x = event.clientX - rect.left;
+                const y = event.clientY - rect.top;
+
+                const px = x / rect.width;
+                const py = y / rect.height;
+
+                const rotateY = (px - 0.5) * 7;
+                const rotateX = (0.5 - py) * 6;
+
+                card.style.transform =
+                    `perspective(1100px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+            });
+
+            card.addEventListener("pointerleave", () => {
+                card.style.transform = "";
+            });
+        });
+    }
+})();
+</script>
+
+</body>
+</html>
