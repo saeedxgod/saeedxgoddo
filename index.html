@@ -356,7 +356,8 @@ header {
 }
 
 .card-image {
-    height:260px;
+    /* تصویر پس‌زمینه کمی پایین‌تر ادامه پیدا می‌کند تا نوار خالی حذف شود */
+    height:285px;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -372,7 +373,7 @@ header {
     background:
         linear-gradient(180deg,rgba(4,12,30,.08),rgba(4,10,25,.75)),
         linear-gradient(120deg,rgba(10,80,180,.25),rgba(4,10,30,.3)),
-        url("https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1800&q=95") center/cover;
+        url("./lunar-background.jpg") center center / cover no-repeat;
 }
 
 .lunar-card .card-image::before {
@@ -398,7 +399,7 @@ header {
     background:
         linear-gradient(180deg,rgba(0,20,15,.05),rgba(0,15,10,.78)),
         linear-gradient(120deg,rgba(0,160,90,.25),rgba(0,20,15,.3)),
-        url("https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1800&q=95") center/cover;
+        url("./modrinth-background.jpg") center center / cover no-repeat;
 }
 
 .modrinth-card .card-image::before {
@@ -516,7 +517,19 @@ header {
     box-shadow:0 5px 20px rgba(0,0,0,.25);
 }
 
-.card-content {padding:25px;}
+/* ادامه دادن تصویر پس‌زمینه تا زیر لبه‌ی کارت؛ بدون جابه‌جایی عنوان */
+.card-content {
+    position:relative;
+    z-index:4;
+    margin-top:-38px;
+    padding:63px 25px 25px;
+    background:linear-gradient(
+        180deg,
+        rgba(5,12,25,0) 0,
+        rgba(5,12,25,.78) 38px,
+        rgba(5,12,25,.90) 100%
+    );
+}
 
 .card-top {display:flex;align-items:center;gap:12px;margin-bottom:14px;}
 .card-title {font-size:21px;font-weight:900;}
@@ -1031,8 +1044,8 @@ footer {
     .toolbar {align-items:stretch;}
     .filters {width:100%;}
     .filter-btn {flex:1;padding:10px 8px;}
-    .card-image {height:210px;}
-    .card-content {padding:20px;}
+    .card-image {height:230px;}
+    .card-content {padding:20px; margin-top:-20px; position:relative;}
     .footer-content {justify-content:center;text-align:center;}
     .specs-grid {gap:12px;}
     .spec-card {padding:20px 10px;}
@@ -1171,7 +1184,7 @@ footer {
                     <div class="card-footer">
                         <span>وب‌سایت غیر رسمی</span>
                         <a class="download-button"
-                           href="https://download1326.mediafire.com/u2fegfgku12gAb55Vr6ARR_CN6d4sJqV6j2_G67ouupH0MRT_qMozbmbPhxt1bh5q6KRXMBKLNQYwsDeBwLJjq2oRxZnOZ0tZmWzmAFNFnypopxBT7oMJ_djAXpzgDir7VW8duiMbUAIluPN9mNIfXh1NQkRcJhD2IWiJuh_gIQ/tw90plssz3gd0tk/saeedprof.rar"
+                           href="https://download1326.mediafire.com/paslgxfvjlwgKh9qyUldEbsqoZBRJCFQRN2NQiRTqwiH7KjWZRJ4NLqHBYFnKGkVseqE180ToABdXd6Ym-pf8ze1v9Yi34dfGrLPhtqpjc5gww9OeOzsrtbsfvsgf2uq4ohZ3j3aR8_sV25sq8NE6fcD2jg9Q9Us7MO0AcR9DT4/tw90plssz3gd0tk/saeedprof.rar"
                            target="_blank" rel="noopener noreferrer">
                             دانلود پروفایل ↗
                         </a>
