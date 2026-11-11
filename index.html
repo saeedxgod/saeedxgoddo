@@ -1021,6 +1021,7 @@ footer {
 @media(max-width:900px) {
     .navbar {flex-wrap:wrap;justify-content:center;padding:15px;}
     .nav-links {justify-content:center;gap:15px;}
+    .donate-button {order:-1;padding:10px 15px;font-size:11px;}
     .header-status {display:none;}
 }
 
@@ -1036,6 +1037,7 @@ footer {
 @media(max-width:520px) {
     header {width:96%;}
     .logo {font-size:21px;}
+    .donate-button {padding:9px 13px;font-size:10px;}
     .nav-links {gap:10px;}
     .nav-links a {font-size:9px;}
     .hero {min-height:440px;padding:65px 10px;}
@@ -1066,6 +1068,38 @@ footer {
         transition-duration:.01ms !important;
     }
 }
+
+/* DONATION BUTTON */
+.donate-button {
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    flex-shrink:0;
+    padding:11px 18px;
+    border-radius:13px;
+    color:#171027;
+    font-size:12px;
+    font-weight:900;
+    white-space:nowrap;
+    background:linear-gradient(115deg,#ffe08a 0%,#ffb84d 48%,#ff8b58 100%);
+    border:1px solid rgba(255,231,170,.8);
+    box-shadow:0 0 0 3px rgba(255,174,75,.10),0 7px 25px rgba(255,143,65,.30),inset 0 1px 0 rgba(255,255,255,.55);
+    transition:transform .25s ease,filter .25s ease,box-shadow .25s ease;
+    animation:donateGlow 2.8s ease-in-out infinite;
+}
+.donate-button .donate-heart {font-size:16px;line-height:1;color:#8d2142;}
+.donate-button:hover {
+    transform:translateY(-3px) scale(1.035);
+    filter:brightness(1.08);
+    box-shadow:0 0 0 4px rgba(255,174,75,.14),0 12px 32px rgba(255,143,65,.42);
+}
+@keyframes donateGlow {
+    0%,100% {box-shadow:0 0 0 3px rgba(255,174,75,.09),0 7px 22px rgba(255,143,65,.25),inset 0 1px 0 rgba(255,255,255,.55);}
+    50% {box-shadow:0 0 0 5px rgba(255,174,75,.13),0 8px 30px rgba(255,143,65,.40),inset 0 1px 0 rgba(255,255,255,.55);}
+}
+
 </style>
 </head>
 
@@ -1078,6 +1112,12 @@ footer {
 <header>
     <div class="container navbar">
         <a class="logo" href="#home">saeed<span>x</span>god</a>
+
+        <a class="donate-button" href="https://reymit.ir/saeedxgod" target="_blank" rel="noopener noreferrer" aria-label="حمایت مالی از saeedxgod در ریمیت">
+            <span class="donate-heart" aria-hidden="true">♥</span>
+            <span>حمایت مالی / دونیت</span>
+            <span aria-hidden="true">↗</span>
+        </a>
 
         <nav class="nav-links">
             <a href="#home">خانه</a>
